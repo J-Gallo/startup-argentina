@@ -19,10 +19,6 @@ app.prepare()
 
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: false }));
-  
-  // server.get('/items/:id', (req, res) => {
-  //   return app.render(req, res, '/product' , req.query)
-  // });
 
   server.get('/api/cards', (req, res) => companyInstance.getCards(req, res));
   server.post('/api/company', (req, res) => companyInstance.addCompany(req, res));
