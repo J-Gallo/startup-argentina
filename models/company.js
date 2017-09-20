@@ -2,7 +2,10 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 const companySchema = new Schema({
-  name: { type: String },
+  name: { 
+    type: String,
+    unique: true
+  },
   logo: { type: String },
   description: { type: String },
   active: Boolean

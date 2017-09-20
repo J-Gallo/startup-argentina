@@ -18,6 +18,12 @@ class CompanyController {
         return res.sendStatus(200)
       }).catch((err) => {
         console.log(err);
+        if (err.code = 11000) {
+          return res.json({
+            status: 200,
+            msg: 'Company already exists'
+          })
+        }
         return res.sendStatus(500);
       })
     } else {
