@@ -23,16 +23,5 @@ exports.mongo = () =>{
     devUrl: "mongodb://localhost:27017",
   };
 
-  function getMongoUrl(env) {
-    let mongoUrl;
-    if (env == 'production') {
-      mongoUrl = mongo.prodUrl;
-    } else {
-      mongoUrl = mongo.devUrl;
-    }
-
-    return mongoUrl;
-  }
-
-  return getMongoUrl;
+  return mongo.devUrl;
 }

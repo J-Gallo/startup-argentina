@@ -33,7 +33,7 @@ app.prepare()
 
   let mongoUrl;
   if (process.env.NODE_ENV != "production") {
-    mongoUrl = config.mongo()(process.env.NODE_ENV) + '/startups-argentina';    
+    mongoUrl = config.mongo() + '/startups-argentina';    
   } else {
     mongoUrl = "mongodb://" + process.env.MONGO_USER + ":" + process.env.MONGO_PWD + "@" + process.env.MONGO_HOST + ":" + process.env.MONGO_PORT + "/" + process.env.MONGO_NAME;
   }
