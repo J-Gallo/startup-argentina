@@ -22,7 +22,6 @@ class Items extends React.Component {
             const companyUrl = '/startup/' + card.formattedName,
               pageUrl = '/company?id=' + card.formattedName;
 
-            console.log(companyUrl, pageUrl);
             return (
               <Link prefetch key={i} href={pageUrl} as={companyUrl}>
                 <div>
