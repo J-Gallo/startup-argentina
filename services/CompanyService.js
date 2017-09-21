@@ -27,6 +27,12 @@ class CompanyService {
 
     return newCompany.save();
   }
+
+  getCompany(name) {
+    const query = Company.findOne({'name': name}).exec();
+
+    return query;
+  }
 }
 
 module.exports = CompanyService;

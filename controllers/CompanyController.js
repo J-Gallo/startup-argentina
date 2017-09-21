@@ -30,6 +30,22 @@ class CompanyController {
       return res.sendStatus(400);
     }
   }
+
+  getCompany(req, res) {
+    const name = req.params.id;
+
+    if (name) {
+      this.companyService.getCompany(name).then((company) => {
+        if (company != null) {
+          return res.json(company);          
+        } else {
+          return res.sendStatus(404);
+        }
+      }).catch((err) => {
+        return res.sendStatus(500);
+      })
+    }
+  }
 }
 
 module.exports = CompanyController;
