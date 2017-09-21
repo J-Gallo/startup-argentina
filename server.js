@@ -20,6 +20,12 @@ app.prepare()
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: false }));
 
+  server.get('/startup/:id', (req, res) => {
+    const mergedQuery = Object.assign({}, req.query, req.params);
+    
+    return app.render(req, res, '/company' , mergedQuery)
+  });
+
   server.get('/api/cards', (req, res) => companyInstance.getCards(req, res));
   server.post('/api/company', (req, res) => companyInstance.addCompany(req, res));
 
