@@ -22,6 +22,7 @@ class CompanyService {
       formattedName: encodeURI(company.name),
       logo: company.logo,
       description: company.description,
+      extraData: company.extraData ? company.extraData : {},
       active: false
     });
 
