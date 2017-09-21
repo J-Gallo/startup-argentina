@@ -35,6 +35,24 @@ class Company extends React.Component {
               <h1>{this.props.company.name}</h1>
             </div>
           </div>
+          <div className="startup-description-container">
+            <div className="startup-description">
+              <h2>Descripción</h2>
+              <p>{this.props.company.description}</p>
+            </div>
+            {this.props.company.extraData &&
+              <div className="startup-extra-data">
+                {Object.keys(this.props.company.extraData).map((data, i) => {
+                  const value = this.props.company.extraData[data];
+                  return(
+                    <ul>
+                      <li key={i}>{data} : {value}</li>
+                    </ul>
+                  )
+                })}   
+              </div>
+            }
+          </div>
         </div>
       
         <style jsx>{`
@@ -82,7 +100,28 @@ class Company extends React.Component {
             margin-bottom: 10px;
             color: #efe6e6;
             font-weight: 200;
-            
+          }
+          .startup-description-container {
+            display: flex;
+            width: 100%;
+            min-height: 550px;
+          }
+          .startup-description {
+            width: 65%;
+            padding: 10px 10px 10px 30px;
+            margin-bottom: 30px;            
+          }
+          .startup-extra-data {
+            width: 35%;
+            border-left: 1px solid #cecece;
+            margin-bottom: 30px;
+          }
+          .startup-extra-data ul {
+            list-style: none;
+          }
+          .startup-extra-data ul li {
+            margin-bottom: 10px;
+            text-transform: uppercase;
           }
         `}</style>
         <style global jsx>{`

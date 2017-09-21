@@ -14,7 +14,7 @@ const companySchema = new Schema({
   logo: { type: String },
   description: { type: String },
   active: Boolean
-});
+}, { minimize: false });
 
 
 module.exports = mongoose.model('Company', companySchema);
