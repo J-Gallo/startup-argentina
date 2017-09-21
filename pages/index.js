@@ -13,13 +13,22 @@ class Items extends React.Component {
 
     return {cards: json}
   }
+  
   render() {
     return(
       <div>
         <div className="startup-container">
           {this.props.cards.map((card, i) => {
+            const companyUrl = '/startup/' + card.formattedName,
+              pageUrl = '/company?id=' + card.formattedName;
+
+            console.log(companyUrl, pageUrl);
             return (
-              <Card key={i} image={card.logo} name={card.name} description={card.description} />
+              <Link prefetch key={i} href={pageUrl} as={companyUrl}>
+                <div>
+                  <Card image={card.logo} name={card.name} description={card.description} />
+                </div>
+              </Link>
             )
           })}
         </div>
