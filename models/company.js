@@ -10,6 +10,7 @@ const companySchema = new Schema({
     type: String,
     unique: true
   },
+  extraData: {},
   logo: { type: String },
   description: { type: String },
   active: Boolean
