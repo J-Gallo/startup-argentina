@@ -6,6 +6,10 @@ const companySchema = new Schema({
     type: String,
     unique: true
   },
+  formattedName: {
+    type: String,
+    unique: true
+  },
   logo: { type: String },
   description: { type: String },
   active: Boolean

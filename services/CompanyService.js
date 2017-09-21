@@ -19,6 +19,7 @@ class CompanyService {
   addCompany(company) {
     let newCompany = new Company({
       name: company.name,
+      formattedName: encodeURI(company.name),
       logo: company.logo,
       description: company.description,
       active: false
