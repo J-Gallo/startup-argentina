@@ -40,16 +40,16 @@ class Company extends React.Component {
               <h2>Descripción</h2>
               <p>{this.props.company.description}</p>
             </div>
-            {this.props.company.extraData &&
+            {Object.keys(this.props.company.extraData).length > 0 &&
               <div className="startup-extra-data">
-                {Object.keys(this.props.company.extraData).map((data, i) => {
-                  const value = this.props.company.extraData[data];
-                  return(
-                    <ul>
-                      <li key={i}>{data} : {value}</li>
-                    </ul>
-                  )
-                })}   
+                <ul>
+                  {Object.keys(this.props.company.extraData).map((data, i) => {
+                    const value = this.props.company.extraData[data];
+                    return(
+                        <li key={i}>{data} : {value}</li>
+                    )
+                  })}  
+                </ul>
               </div>
             }
           </div>
@@ -107,17 +107,19 @@ class Company extends React.Component {
             min-height: 550px;
           }
           .startup-description {
-            width: 65%;
+            width: 60%;
             padding: 10px 10px 10px 30px;
             margin-bottom: 30px;            
           }
           .startup-extra-data {
-            width: 35%;
+            width: 40%;
             border-left: 1px solid #cecece;
             margin-bottom: 30px;
           }
           .startup-extra-data ul {
             list-style: none;
+            padding: 0 0 0 20px;
+            font-size: 14px;
           }
           .startup-extra-data ul li {
             margin-bottom: 10px;
