@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Card from '../components/Card'
+import Footer from '../components/Footer'
 import 'isomorphic-fetch'
 import config from '../config'
 
@@ -31,6 +32,7 @@ class Items extends React.Component {
             )
           })}
         </div>
+        <Footer />        
         <style jsx>{`
           .startup-container {
             max-width: 1100px;

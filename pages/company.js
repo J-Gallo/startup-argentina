@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-fetch'
+import Footer from '../components/Footer'
 import config from '../config'
 
 class Company extends React.Component {
@@ -54,7 +55,8 @@ class Company extends React.Component {
             }
           </div>
         </div>
-      
+        <Footer />        
+
         <style jsx>{`
           .startup-container {
             max-width: 1100px;
@@ -100,6 +102,7 @@ class Company extends React.Component {
             margin-bottom: 10px;
             color: #efe6e6;
             font-weight: 200;
+            cursor: default;
           }
           .startup-description-container {
             display: flex;
