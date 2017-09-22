@@ -22,6 +22,7 @@ class Autocomplete extends React.Component {
     this.setState({
         value: event.target.value
     });
+    this.props.onFilterTextInput(event.target.value);
   }
 
   search() {

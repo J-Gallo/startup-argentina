@@ -95,7 +95,7 @@ class Add extends React.Component {
                   <input type="text" onChange={this.handleChange.bind(this)} value={this.state.mail} name="mail" placeholder="Mail" />
                 </div>
                 <div className="startup-form-field">
-                  <span>Descripcion</span>                
+                  <span>Descripción</span>                
                   <textarea onChange={this.handleChange.bind(this)} value={this.state.description} name="description"></textarea>
                 </div>
                 <div className="startup-form-field">

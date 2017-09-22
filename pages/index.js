@@ -7,7 +7,14 @@ import 'isomorphic-fetch'
 import config from '../config'
 
 class Items extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ''
+    }
 
+    this.handleFilter = this.handleFilter.bind(this);
+  }
   static async getInitialProps({req, query}) {
     const baseUrl = config.baseUrl()(process.env.NODE_ENV),
       responseJson = await fetch(baseUrl + '/api/cards'),
@@ -16,21 +23,30 @@ class Items extends React.Component {
     return {cards: json}
   }
   
+  handleFilter(text) {
+    this.setState({
+      search: text.toLowerCase()
+    })
+  }
   render() {
     return(
       <div>
-        <Header />
+        <Header filterText={this.handleFilter}/>
         <div className="startup-container">
           {this.props.cards.map((card, i) => {
             const companyUrl = '/startup/' + card.formattedName,
               pageUrl = '/company?id=' + card.formattedName;
 
             return (
-              <Link prefetch key={i} href={pageUrl} as={companyUrl}>
-                <div>
-                  <Card image={card.logo} name={card.name} description={card.description} />
-                </div>
-              </Link>
+              <div key={i}>
+                {card.name.toLowerCase().indexOf(this.state.search) > -1 &&
+                  <Link prefetch key={i} href={pageUrl} as={companyUrl}>
+                  <div>
+                    <Card image={card.logo} name={card.name} description={card.description} />
+                  </div>
+                </Link>
+                }
+              </div>
             )
           })}
         </div>
