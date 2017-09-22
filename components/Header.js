@@ -20,7 +20,9 @@ class Header extends React.Component {
               <span>STARTUP ARGENTINA</span>
             </Link>
           </div>
-          <Autocomplete onFilterTextInput={this.handleFilter}/>
+          {this.props.autocomplete == "true" &&
+            <Autocomplete onFilterTextInput={this.handleFilter}/>
+          }
           <div className="startup-actions">
             <Link href="/add" as='/agregar'>
               <span>Agregar startup</span>

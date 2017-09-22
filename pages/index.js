@@ -31,7 +31,7 @@ class Items extends React.Component {
   render() {
     return(
       <div>
-        <Header filterText={this.handleFilter}/>
+        <Header autocomplete="true" filterText={this.handleFilter}/>
         <div className="startup-container">
           {this.props.cards.map((card, i) => {
             const companyUrl = '/startup/' + card.formattedName,
