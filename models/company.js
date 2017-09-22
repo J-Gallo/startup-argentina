@@ -10,8 +10,9 @@ const companySchema = new Schema({
     type: String,
     unique: true
   },
-  extraData: {},
+  mail: { type: String },
   logo: { type: String },
+  extraData: {},
   description: { type: String },
   active: Boolean
 }, { minimize: false });

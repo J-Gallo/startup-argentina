@@ -20,9 +20,14 @@ class CompanyService {
     let newCompany = new Company({
       name: company.name,
       formattedName: encodeURI(company.name),
+      mail: company.mail,      
       logo: company.logo,
       description: company.description,
-      extraData: company.extraData ? company.extraData : {},
+      extraData: {
+        web: company.web ? company.web : "",
+        twitter: company.twitter ? company.twitter : "",
+        instagram: company.instagram ? company.instagram : ""
+      },
       active: false
     });
 

@@ -12,6 +12,7 @@ class Add extends React.Component {
       status: '',
       name: '',
       logo: '',
+      mail: '',
       description: '',
       web: '',
       twitter: '',
