@@ -29,6 +29,7 @@ class Card extends React.Component {
             display: flex;
             border-radius: 5px;
             margin: 10px;
+            cursor: pointer;
           }
           .startup-logo {
             width: 100px;

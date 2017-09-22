@@ -1,5 +1,5 @@
 {
-  "name": "startups-argentina",
+  "name": "startup-argentina",
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_ENV=dev node server.js",

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Card from '../components/Card'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 import 'isomorphic-fetch'
 import config from '../config'
 
@@ -18,6 +19,7 @@ class Items extends React.Component {
   render() {
     return(
       <div>
+        <Header />
         <div className="startup-container">
           {this.props.cards.map((card, i) => {
             const companyUrl = '/startup/' + card.formattedName,

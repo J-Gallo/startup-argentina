@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-fetch'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 import config from '../config'
 
 class Company extends React.Component {
@@ -27,6 +28,7 @@ class Company extends React.Component {
   render() {
     return(
       <div>
+        <Header />
         <div className="startup-container">
           <div className="startup-header">
             <div className="startup-logo">
@@ -66,7 +68,8 @@ class Company extends React.Component {
             flex-wrap: wrap;
             justify-content: center;
             background-color: #fff;
-            min-height: 800px;
+            min-height: 600px;
+            margin-top: 20px;
             border: 1px solid #f1f1f1;
           }
           .startup-header {
@@ -107,7 +110,7 @@ class Company extends React.Component {
           .startup-description-container {
             display: flex;
             width: 100%;
-            min-height: 550px;
+            min-height: 400px;
           }
           .startup-description {
             width: 60%;

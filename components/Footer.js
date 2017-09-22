@@ -16,6 +16,7 @@ const Footer = (props) => (
       }
       a {
         color: #2671bd;
+        text-decoration: none;
       }
     `}</style>
   </div>
