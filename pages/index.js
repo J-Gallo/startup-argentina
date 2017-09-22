@@ -39,7 +39,7 @@ class Items extends React.Component {
           .startup-container {
             max-width: 1100px;
             min-width: 1100px;
-            margin: auto;
+            margin: 20px auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;

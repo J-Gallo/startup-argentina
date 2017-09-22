@@ -10,6 +10,9 @@ const Header = () => (
         </Link>
       </div>
       <Autocomplete />
+      <div className="startup-actions">
+        <span>Agregar startup</span>
+      </div>
     </div>
     <style jsx>{`
       header {
@@ -35,6 +38,22 @@ const Header = () => (
         color: #FFF;
         font-size: 20px;
         line-height: 54px;
+      }
+      .startup-actions {
+        display: inline-block;
+        float: right;
+        margin-right: 10px;
+      }
+
+      .startup-actions span {
+        line-height: 54px;
+        color: #dad0d0;
+        cursor: pointer;
+        font-weight: lighter;
+        letter-spacing: 1px;
+      }
+      .startup-actions span:hover {
+        text-decoration: underline;
       }
     `}</style>
   </header>
