@@ -5,8 +5,8 @@ const Footer = (props) => (
       div {
         text-align: center;
         color: #333;
-        position: fixed;
-        bottom: 30px;;
+        position: relative;
+        top: 30px;;
         margin: auto;
         width: 100%;
       }

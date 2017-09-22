@@ -26,6 +26,12 @@ app.prepare()
     return app.render(req, res, '/company' , mergedQuery)
   });
 
+  server.get('/agregar', (req, res) => {
+    const mergedQuery = Object.assign({}, req.query, req.params);
+    
+    return app.render(req, res, '/add' , mergedQuery)
+  })
+
   server.get('/api/cards', (req, res) => companyInstance.getCards(req, res));
   server.post('/api/company', (req, res) => companyInstance.addCompany(req, res));
   server.get('/api/company/:id', (req, res) => companyInstance.getCompany(req, res));

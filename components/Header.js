@@ -11,7 +11,9 @@ const Header = () => (
       </div>
       <Autocomplete />
       <div className="startup-actions">
-        <span>Agregar startup</span>
+        <Link href="/add" as='/agregar'>
+          <span>Agregar startup</span>
+        </Link>
       </div>
     </div>
     <style jsx>{`
