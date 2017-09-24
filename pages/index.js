@@ -23,7 +23,6 @@ class Items extends React.Component {
     } else {
       page = query.page;
     }
-    console.log(1234);
     const baseUrl = config.baseUrl()(process.env.NODE_ENV),
       responseJson = await fetch(baseUrl + '/api/cards?page=' + page),
       json = await responseJson.json();

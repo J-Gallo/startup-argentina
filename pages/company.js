@@ -18,7 +18,6 @@ class Company extends React.Component {
       name = query.id;
     }
 
-    console.log(1111);
     const baseUrl = config.baseUrl()(process.env.NODE_ENV),
       responseJson = await fetch(baseUrl + '/api/company/' + name),
       json = await responseJson.json();
