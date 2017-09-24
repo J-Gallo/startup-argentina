@@ -23,14 +23,22 @@ class CompanyService {
       mail: company.mail,      
       logo: company.logo,
       description: company.description,
-      extraData: {
-        web: company.web ? company.web : "",
-        twitter: company.twitter ? company.twitter : "",
-        instagram: company.instagram ? company.instagram : ""
-      },
+      extraData: {},
       active: false
     });
 
+    if (company.web) {
+      newCompany.extraData.web = company.web;
+    }
+
+    if (company.twitter) {
+      newCompany.extraData.twitter = company.twitter;
+    }
+
+    if (company.instagram) {
+      newCompany.extraData.instagram = company.instagram;
+    }
+ 
     return newCompany.save();
   }
 
