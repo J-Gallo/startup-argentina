@@ -16,8 +16,15 @@ class Items extends React.Component {
     this.handleFilter = this.handleFilter.bind(this);
   }
   static async getInitialProps({req, query}) {
+    let page;
+
+    if (req) {
+      page = req.query['page'] ? req.query['page'] : 1;
+    } else {
+      page = query.page;
+    }
     const baseUrl = config.baseUrl()(process.env.NODE_ENV),
-      responseJson = await fetch(baseUrl + '/api/cards'),
+      responseJson = await fetch(baseUrl + '/api/cards?page=' + page),
       json = await responseJson.json();
 
     return {cards: json}
@@ -38,7 +45,6 @@ class Items extends React.Component {
               pageUrl = '/company?id=' + card.formattedName;
 
             let logo;
-            console.log(444, card.logo);
             if (card.logo == undefined || card.logo == '') {
               card.logo = '/static/default_logo.png'
             }

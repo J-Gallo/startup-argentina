@@ -10,8 +10,10 @@ class CompanyService {
     this._pageSize = 20;
   }
 
-  getCards() {
-    const query = Company.find({'active': true}).sort({'_id': -1}).limit(this._pageSize).exec();
+  getCards(page) {
+    let offset = (page - 1) * this._pageSize;
+
+    const query = Company.find({'active': true}).sort({'_id': -1}).skip(offset).limit(this._pageSize).exec();
 
     return query;
   }

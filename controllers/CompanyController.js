@@ -7,7 +7,9 @@ class CompanyController {
   }
 
   getCards(req, res) {
-    this.companyService.getCards().then((items) => {
+    const page = req.query['page'] ? req.query['page'] : 1;
+
+    this.companyService.getCards(page).then((items) => {
       return res.json(items);
     })
   }

@@ -41,8 +41,6 @@ class Add extends React.Component {
       },
       body: JSON.stringify(this.state)
     })
-
-    console.log(responseJson);
     
     if (responseJson.status == 200) {
       status = 'ok';
