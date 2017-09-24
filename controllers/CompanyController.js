@@ -13,7 +13,7 @@ class CompanyController {
   }
 
   addCompany(req, res) {
-    if (req.body && req.body.name && req.body.logo && req.body.description && req.body.mail) {
+    if (req.body && req.body.name && req.body.description && req.body.mail) {
       this.companyService.addCompany(req.body).then(() => {
         return res.sendStatus(200)
       }).catch((err) => {

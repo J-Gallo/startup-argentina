@@ -37,6 +37,11 @@ class Items extends React.Component {
             const companyUrl = '/startup/' + card.formattedName,
               pageUrl = '/company?id=' + card.formattedName;
 
+            let logo;
+            console.log(444, card.logo);
+            if (card.logo == undefined || card.logo == '') {
+              card.logo = '/static/default_logo.png'
+            }
             return (
               <div key={i}>
                 {card.name.toLowerCase().indexOf(this.state.search) > -1 &&
