@@ -37,6 +37,7 @@ class Autocomplete extends React.Component {
             value={this.state.value} 
             onChange={this.handleChange} 
             type="text" 
+            autoComplete="off"            
             placeholder="Buscar" 
             className="startup-autocomplete"
             name="search"
