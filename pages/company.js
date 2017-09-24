@@ -115,7 +115,8 @@ class Company extends React.Component {
           .startup-description {
             width: 60%;
             padding: 10px 10px 10px 30px;
-            margin-bottom: 30px;            
+            margin-bottom: 30px;      
+            white-space: pre-line;      
           }
           .startup-extra-data {
             width: 40%;

@@ -55,6 +55,7 @@ class Card extends React.Component {
           .startup-data .startup-description {
             margin: 0;
             padding: 0;
+            white-space: pre-line;
           }
           .startup-data .startup-description p {
             line-height: 20px;
