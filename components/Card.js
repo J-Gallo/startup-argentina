@@ -46,6 +46,7 @@ class Card extends React.Component {
             display: inline-block;
             flex: auto;
             margin: 20px 20px 10px 10px;
+            width: 388px;
             
           }
           .startup-data .startup-name {

@@ -26,19 +26,13 @@ class Company extends React.Component {
   }
 
   render() {
-    let logo;
-    if (this.props.logo == undefined || this.props.logo == '') {
-      logo = '/static/default_logo.png'
-    } else {
-      logo = this.props.logo;
-    }
     return(
       <div>
         <Header />
         <div className="startup-container">
           <div className="startup-header">
             <div className="startup-logo">
-              <img src={logo} />
+              <img src={this.props.company.logo} />
             </div>
             <div className="startup-name">
               <h1>{this.props.company.name}</h1>
