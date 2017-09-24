@@ -33,7 +33,8 @@ class Add extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
     let status;
-    const responseJson = await fetch('/api/company', {
+    const baseUrl = config.baseUrl()(process.env.NODE_ENV),
+      responseJson = await fetch(baseUrl + '/api/company', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

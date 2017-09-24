@@ -1,6 +1,7 @@
 exports.baseUrl = () => {
   const url = {
     devUrl: 'http://localhost:3000',
+    prodUrl: 'https://startup-argentina-yjxpotrypw.now.sh'
   };
   
   function getBaseUrl(env) {
