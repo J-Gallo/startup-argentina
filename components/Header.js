@@ -70,6 +70,23 @@ class Header extends React.Component {
           .startup-actions span:hover {
             text-decoration: underline;
           }
+          @media(max-width: 1000px) {
+            header {
+              height: auto;
+            }
+            .startup-logo {
+              float: none;
+              display: block
+              text-align: center;
+            }
+            .startup-autocomplete-form {
+              display: block;
+              width: calc(100% - 10px);
+            }
+            .startup-actions {
+              display: none;
+            }
+          }
         `}</style>
       </header>
     )

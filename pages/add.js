@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import HeadTag from '../components/Head'
 import 'isomorphic-fetch'
 import config from '../config'
 
@@ -70,6 +71,7 @@ class Add extends React.Component {
   render() {
     return(
       <div>
+        <HeadTag />
         <Header />
           {this.state.status == 'ok' && 
             <div className="startup-response-ok">Startup creada correctamente</div>
@@ -117,8 +119,8 @@ class Add extends React.Component {
         <Footer />        
         <style jsx>{`
           .startup-response-ok {
-            max-width: 1080px;
-            min-width: 1080px;
+            max-width: 980px;
+            min-width: 980px;
             margin: 10px auto;;
             height: 35px;
             background-color: #2671bd;
@@ -139,8 +141,8 @@ class Add extends React.Component {
             color: #FFF;
           }
           .startup-container {
-            max-width: 1100px;
-            min-width: 1100px;
+            max-width: 1000px;
+            min-width: 1000px;
             margin: auto;
             display: flex;
             flex-wrap: wrap;

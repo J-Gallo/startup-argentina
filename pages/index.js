@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Card from '../components/Card'
 import Footer from '../components/Footer'
+import HeadTag from '../components/Head'
 import Header from '../components/Header'
 import 'isomorphic-fetch'
 import config from '../config'
@@ -38,6 +39,7 @@ class Items extends React.Component {
   render() {
     return(
       <div>
+        <HeadTag />
         <Header autocomplete="true" filterText={this.handleFilter}/>
         <div className="startup-container">
           {this.props.cards.map((card, i) => {
@@ -49,7 +51,7 @@ class Items extends React.Component {
               card.logo = '/static/default_logo.png'
             }
             return (
-              <div key={i}>
+              <div className="startup-card-container" key={i}>
                 {card.name.toLowerCase().indexOf(this.state.search) > -1 &&
                   <Link prefetch key={i} href={pageUrl} as={companyUrl}>
                   <div>
@@ -64,12 +66,22 @@ class Items extends React.Component {
         <Footer />        
         <style jsx>{`
           .startup-container {
-            max-width: 1100px;
-            min-width: 1100px;
+            max-width: 1000px;
+            min-width: 1000px;
             margin: 20px auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+          }
+          
+          @media(max-width: 1000px) {
+            .startup-container {
+              width: 100%;
+              min-width: 0;
+            }
+            .startup-card-container {
+              width: 100%;
+            }
           }
         `}</style>
         <style global jsx>{`

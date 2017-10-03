@@ -18,6 +18,11 @@ const Footer = (props) => (
         color: #2671bd;
         text-decoration: none;
       }
+      @media(max-width: 1000px) {
+        div {
+          margin-bottom: 30px;
+        }
+      }
     `}</style>
   </div>
 )

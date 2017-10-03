@@ -3,6 +3,7 @@ import Link from 'next/link'
 import 'isomorphic-fetch'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import HeadTag from '../components/Head'
 import config from '../config'
 
 class Company extends React.Component {
@@ -28,6 +29,7 @@ class Company extends React.Component {
   render() {
     return(
       <div>
+        <HeadTag />
         <Header />
         <div className="startup-container">
           <div className="startup-header">
@@ -61,8 +63,8 @@ class Company extends React.Component {
 
         <style jsx>{`
           .startup-container {
-            max-width: 1100px;
-            min-width: 1100px;
+            max-width: 1000px;
+            min-width: 1000px;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -132,6 +134,40 @@ class Company extends React.Component {
             margin-bottom: 10px;
             text-transform: uppercase;
           }
+          @media(max-width: 1000px) {
+            .startup-description-container {
+              display: block;
+            }
+
+            .startup-container {
+              width: 100%;
+              min-width: 0;
+              margin-top: 0;
+            }
+            .startup-header {
+              display: block;
+              height: 230px;
+            }
+            .startup-logo {
+              margin: 30px auto;
+              margin-bottom: 0;
+              width: 100px;
+              height: 100px;
+            }
+            .startup-logo img {
+              max-width: 90px;
+              max-height: 90px;
+            }
+            .startup-name {
+              display: block;
+              text-align: center;
+            }
+            .startup-description {
+              width: auto;
+              word-wrap: break-word;
+            }
+          }
+
         `}</style>
         <style global jsx>{`
           body {

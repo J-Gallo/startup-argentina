@@ -21,7 +21,7 @@ class Card extends React.Component {
         </div>
         <style jsx>{`
           .startup-card {
-            width: 528px;
+            width: 478px;
             height: 150px;
             border: 1px solid #e5e5e5;
             border-bottom: 2px solid #cecece;
@@ -46,7 +46,7 @@ class Card extends React.Component {
             display: inline-block;
             flex: auto;
             margin: 20px 20px 10px 10px;
-            width: 388px;
+            width: calc(100% - 125px);
             
           }
           .startup-data .startup-name {
@@ -67,6 +67,13 @@ class Card extends React.Component {
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+
+          @media(max-width: 1000px) {
+            .startup-card {
+              width: 100%;
+              margin: 0;
+            }
           }
         `}</style>
       </div>
