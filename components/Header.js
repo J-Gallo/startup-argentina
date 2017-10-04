@@ -79,10 +79,7 @@ class Header extends React.Component {
               display: block
               text-align: center;
             }
-            .startup-autocomplete-form {
-              display: block;
-              width: calc(100% - 10px);
-            }
+            
             .startup-actions {
               display: none;
             }

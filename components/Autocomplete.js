@@ -31,7 +31,7 @@ class Autocomplete extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="startup-autocomplete-container">
         <div className="startup-autocomplete-form">
           <input onKeyPress={this.handleKeyPress} 
             value={this.state.value} 
@@ -44,7 +44,7 @@ class Autocomplete extends React.Component {
           />
         </div>
         <style jsx>{`
-          div {
+          .startup-autocomplete-container {
             display: inline-block;
           }
           .startup-autocomplete-form {
@@ -80,6 +80,23 @@ class Autocomplete extends React.Component {
           }
           :-moz-placeholder { /* Firefox 18- */
             color: #afaeae;
+          }
+
+          @media(max-width: 1000px) {
+            .startup-autocomplete-container {
+              width: 100%;
+              text-align: center;
+            }
+
+            .startup-autocomplete-form {
+              display: block;
+              width: 100%;
+              margin: 0;
+              
+            }
+            .startup-autocomplete {
+              width: 300px;
+            }
           }
         `}</style>
       </div>

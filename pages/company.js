@@ -50,8 +50,19 @@ class Company extends React.Component {
                 <ul>
                   {Object.keys(this.props.company.extraData).map((data, i) => {
                     const value = this.props.company.extraData[data];
+                    switch (data) {
+                      case "twitter":
+                        data = '/static/twitter-ico.png';
+                        break;
+                      case "instagram":
+                        data = '/static/instagram-ico.png';
+                        break;
+                      case "web":
+                        data = '/static/www-ico.png';
+                        break;
+                    }
                     return(
-                        <li key={i}>{data} : {value}</li>
+                        <li key={i}><img src={data} className="startup-extraData-logo" /> <a href={value}>{value}</a></li>
                     )
                   })}  
                 </ul>
@@ -62,6 +73,10 @@ class Company extends React.Component {
         <Footer />        
 
         <style jsx>{`
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
           .startup-container {
             max-width: 1000px;
             min-width: 1000px;
@@ -132,7 +147,11 @@ class Company extends React.Component {
           }
           .startup-extra-data ul li {
             margin-bottom: 10px;
-            text-transform: uppercase;
+          }
+          .startup-extraData-logo {
+            width: 25px;
+            vertical-align: middle;
+            margin-right: 5px;
           }
           @media(max-width: 1000px) {
             .startup-description-container {
@@ -142,11 +161,12 @@ class Company extends React.Component {
             .startup-container {
               width: 100%;
               min-width: 0;
-              margin-top: 0;
+              margin-top: -1px;
             }
             .startup-header {
               display: block;
               height: 230px;
+              margin-left: -2px;
             }
             .startup-logo {
               margin: 30px auto;
@@ -165,6 +185,12 @@ class Company extends React.Component {
             .startup-description {
               width: auto;
               word-wrap: break-word;
+            }
+            .startup-extra-data ul {
+              padding: 10px 10px 10px 30px;
+            }
+            .startup-extraData-logo {
+              margin-bottom: 10px;
             }
           }
 

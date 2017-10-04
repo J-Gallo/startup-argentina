@@ -78,6 +78,7 @@ class Items extends React.Component {
             .startup-container {
               width: 100%;
               min-width: 0;
+              margin-top: 0;
             }
             .startup-card-container {
               width: 100%;
