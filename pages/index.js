@@ -6,6 +6,7 @@ import HeadTag from '../components/Head'
 import Header from '../components/Header'
 import 'isomorphic-fetch'
 import config from '../config'
+import { initGA, logPageView } from '../utils/analytics'
 
 class Items extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Items extends React.Component {
 
     this.handleFilter = this.handleFilter.bind(this);
   }
+  
   static async getInitialProps({req, query}) {
     let page;
 
@@ -30,7 +32,15 @@ class Items extends React.Component {
 
     return {cards: json}
   }
-  
+
+  componentDidMount () {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }
+
   handleFilter(text) {
     this.setState({
       search: text.toLowerCase()
@@ -63,7 +73,7 @@ class Items extends React.Component {
             )
           })}
         </div>
-        <Footer />        
+        <Footer />
         <style jsx>{`
           .startup-container {
             max-width: 1000px;
@@ -73,7 +83,7 @@ class Items extends React.Component {
             flex-wrap: wrap;
             justify-content: center;
           }
-          
+
           @media(max-width: 1000px) {
             .startup-container {
               width: 100%;

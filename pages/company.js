@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeadTag from '../components/Head'
 import config from '../config'
+import { initGA, logPageView } from '../utils/analytics'
 
 class Company extends React.Component {
   constructor(props) {
@@ -26,6 +27,14 @@ class Company extends React.Component {
     return {company: json};
   }
 
+  componentDidMount () {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }
+  
   render() {
     return(
       <div>

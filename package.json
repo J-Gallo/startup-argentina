@@ -14,10 +14,11 @@
     "next": "latest",
     "node-cache": "^4.1.1",
     "q": "^1.5.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "restler": "^3.4.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-ga": "^2.3.5",
+    "restler": "^3.4.0",
+    "styled-jsx": "^2.0.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

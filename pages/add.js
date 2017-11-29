@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import HeadTag from '../components/Head'
 import 'isomorphic-fetch'
 import config from '../config'
+import { initGA, logPageView } from '../utils/analytics'
 
 class Add extends React.Component {
   constructor(props) {
@@ -29,6 +30,14 @@ class Add extends React.Component {
       [name]: event.target.value
     })
     
+  }
+
+  componentDidMount () {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
   }
 
   async handleSubmit(event) {
