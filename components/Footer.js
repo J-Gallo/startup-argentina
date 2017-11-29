@@ -1,6 +1,6 @@
 const Footer = (props) => (
   <div>
-    <span>Made with ♥ by <a href="https://twitter.com/_JuanGallo" target="_blank">Juani Gallo</a></span>
+    <span>Made with ♥ by <a href="https://www.juan-gallo.com" target="_blank">Juani Gallo</a></span>
     <style jsx>{`
       div {
         text-align: center;
