@@ -3,3 +3,4 @@ node_modules
 .idea
 .vscode
 now.json
+package-lock.json
