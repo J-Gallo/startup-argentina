@@ -83,7 +83,7 @@ class Add extends React.Component {
         <HeadTag />
         <Header />
           {this.state.status == 'ok' && 
-            <div className="startup-response-ok">Startup creada correctamente</div>
+            <div className="startup-response-ok">Startup creada correctamente. En breve sera aprobada.</div>
           }
           {this.state.status == '400' && 
             <div className="startup-response-error">Por favor completa todos los datos requeridos</div>
@@ -99,7 +99,7 @@ class Add extends React.Component {
                 </div>
                 <div className="startup-form-field">
                   <span>Logo</span>                  
-                  <input type="text" onChange={this.handleChange.bind(this)} value={this.state.logo} name="logo" placeholder="Logo" />
+                  <input type="text" onChange={this.handleChange.bind(this)} value={this.state.logo} name="logo" placeholder="Link a imagen" />
                 </div>
                 <div className="startup-form-field">
                   <span>Mail</span>                
@@ -120,7 +120,7 @@ class Add extends React.Component {
                 </div>
                 <div className="startup-form-field">
                   <span>Instagram</span>                
-                  <input type="text" onChange={this.handleChange.bind(this)} value={this.state.instagram} name="instagram" placeholder="Instagram (opcional" />
+                  <input type="text" onChange={this.handleChange.bind(this)} value={this.state.instagram} name="instagram" placeholder="Instagram (opcional)" />
                 </div>
                 <input type="submit" value="Enviar" className="startup-cta-button" />
               </form>

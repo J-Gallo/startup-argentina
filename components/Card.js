@@ -30,6 +30,7 @@ class Card extends React.Component {
             border-radius: 5px;
             margin: 10px;
             cursor: pointer;
+            overflow: hidden;
           }
           .startup-logo {
             width: 100px;
@@ -62,7 +63,7 @@ class Card extends React.Component {
             display: block; /* Fallback for non-webkit */
             display: -webkit-box;
             max-width: 100%;
-            max-height: 20pxt * 4; /* Fallback for non-webkit */
+            max-height: 80px; /* Fallback for non-webkit */
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;

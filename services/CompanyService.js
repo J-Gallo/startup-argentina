@@ -30,14 +30,24 @@ class CompanyService {
     });
 
     if (company.web) {
+      if (company.web.indexOf("http") == -1) {
+        company.web = 'http://' + company.web 
+      }
+
       newCompany.extraData.web = company.web;
     }
 
     if (company.twitter) {
+      if (company.twitter.indexOf("http") == -1) {
+        company.twitter = 'http://' + company.twitter 
+      }
       newCompany.extraData.twitter = company.twitter;
     }
 
     if (company.instagram) {
+      if (company.instagram.indexOf("http") == -1) {
+        company.instagram = 'http://' + company.instagram 
+      }
       newCompany.extraData.instagram = company.instagram;
     }
  

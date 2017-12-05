@@ -71,7 +71,7 @@ class Company extends React.Component {
                         break;
                     }
                     return(
-                        <li key={i}><img src={data} className="startup-extraData-logo" /> <a href={value}>{value}</a></li>
+                        <li key={i}><img src={data} className="startup-extraData-logo" /> <a target="_blank" href={value}>{value}</a></li>
                     )
                   })}  
                 </ul>
